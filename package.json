@@ -2,7 +2,7 @@
   "name": "jpstartuppage",
   "displayName": "JP Startup Page",
   "description": "自分のプロジェクトフォルダを自動スキャンして一覧表示するカスタムスタートページ。インクリメンタルサーチと最近開いた履歴つき。",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "junpeiwada",
   "private": true,
   "license": "MIT",

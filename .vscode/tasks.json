@@ -7,6 +7,18 @@
       "group": "build",
       "problemMatcher": "$tsc",
       "label": "npm: compile"
+    },
+    {
+      "type": "npm",
+      "script": "install-local",
+      "problemMatcher": "$tsc",
+      "label": "npm: install-local",
+      "detail": "ビルド → VSIX 生成 → この VSCode にインストール",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
     }
   ]
 }

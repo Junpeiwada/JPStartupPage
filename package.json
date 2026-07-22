@@ -1,0 +1,68 @@
+{
+  "name": "jpstartuppage",
+  "displayName": "JP Startup Page",
+  "description": "自分のプロジェクトフォルダを自動スキャンして一覧表示するカスタムスタートページ。インクリメンタルサーチと最近開いた履歴つき。",
+  "version": "0.1.0",
+  "publisher": "junpeiwada",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Junpeiwada/JPStartupPage.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "jpstartuppage.show",
+        "title": "JP Startup Page: スタートページを開く"
+      }
+    ],
+    "configuration": {
+      "title": "JP Startup Page",
+      "properties": {
+        "jpstartuppage.scanRoots": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "~/Documents/Project"
+          ],
+          "description": "プロジェクトを自動スキャンするルートディレクトリ（直下1階層を列挙）"
+        },
+        "jpstartuppage.showOnStartup": {
+          "type": "boolean",
+          "default": true,
+          "description": "フォルダを開いていないウィンドウの起動時にスタートページを自動表示する"
+        },
+        "jpstartuppage.recentCount": {
+          "type": "number",
+          "default": 10,
+          "description": "「最近開いた」に表示する件数"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "1.85.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.4.0"
+  }
+}

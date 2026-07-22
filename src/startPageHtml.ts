@@ -332,6 +332,11 @@ export function getStartPageHtml(): string {
 
   searchEl.addEventListener('input', render);
 
+  // Webview では autofocus が効かないことがあるため、明示的にフォーカスする。
+  // パネルがアクティブになった（iframe がフォーカスを得た）ときも検索欄へ移す
+  searchEl.focus();
+  window.addEventListener('focus', () => searchEl.focus());
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
       e.preventDefault();

@@ -57,8 +57,8 @@
     "compile": "tsc -p .",
     "watch": "tsc -watch -p .",
     "vscode:prepublish": "npm run compile",
-    "package": "vsce package",
-    "install-local": "npm run package && code --install-extension jpstartuppage-$npm_package_version.vsix --force"
+    "package": "vsce package --allow-star-activation",
+    "install-local": "npm run package && code --install-extension jpstartuppage-$npm_package_version.vsix --force && echo \"\n======\n✅ インストールが正常に完了しました。VSCode をリロード（Cmd+Shift+P →『Developer: Reload Window』）すると新バージョンが有効になります。\n======\""
   },
   "devDependencies": {
     "@types/node": "^20.11.0",

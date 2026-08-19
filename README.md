@@ -68,4 +68,10 @@ code --install-extension jpstartuppage-*.vsix --force
 
 ## 複数マシンへの配布
 
-現状は private リポジトリ＋VSIX の手動インストール。将来的に VS Code Marketplace に公開すれば、Settings Sync の拡張同期で全マシンに自動インストール・自動更新される（要 Azure DevOps パブリッシャー登録、拡張は公開になる）。
+現状は GitHub 公開リポジトリ＋VSIX の手動インストール。各マシンで clone して `npm install && npm run install-local` すればよい。
+
+将来的に VS Code Marketplace に公開すれば、Settings Sync の拡張同期で全マシンに自動インストール・自動更新される（要 Azure DevOps パブリッシャー登録）。その際は `package.json` の `"private": true` を外す必要がある（現状は誤って publish しないための保険として残している）。
+
+## ライセンス
+
+[MIT License](LICENSE) — Copyright (c) 2026 Junpei Wada

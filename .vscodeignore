@@ -4,3 +4,7 @@ tsconfig.json
 .gitignore
 **/*.map
 node_modules/**
+Tools/**
+docs/**
+**/__pycache__/**
+*.vsix
